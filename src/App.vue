@@ -1,15 +1,14 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
+  <WaterMark />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import WaterMark from './components/WaterMark.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    WaterMark
   }
 }
 </script>
