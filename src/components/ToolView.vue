@@ -1,6 +1,10 @@
 <template>
-  <input type="file" id="imgFile" accept="image/png,image/jpeg,image/gif,image/jpg" @change="selectImg">
-  <label for="imgFile">上传图片</label>
+  <section>
+    <input type="file" id="imgFile" accept="image/png,image/jpeg,image/gif,image/jpg" @change="selectImg">
+    <label class="btn" for="imgFile">上传图片</label>
+
+    <span class="btn" @click="download">下载图片</span>
+  </section>
 </template>
 
 <script>
@@ -16,16 +20,30 @@ export default {
       reader.readAsDataURL(file)
     }
 
+    const download = () => emit('downloadImg')
+
     return {
-      selectImg
+      selectImg,
+      download
     }
   },
-  emits: ['changeImgUrl']
+  emits: ['changeImgUrl', 'downloadImg']
 }
 </script>
 
 <style lang="">
   #imgFile {
     display: none;
+  }
+  section {
+    margin: 20px auto;
+  }
+  .btn {
+    margin: 10px;
+    padding: 3px 10px;
+    border: 1px solid #DCDFE6;
+    border-radius: 6px;
+    color: #303133;
+    cursor: pointer;
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <ToolView @changeImgUrl="changeImgUrl" />
+  <ToolView @changeImgUrl="changeImgUrl" @downloadImg="downloadImg" />
   <canvas id="canvas"></canvas>
 </template>
 
@@ -53,8 +53,18 @@ export default {
       addWatermark()
     }
 
+    const downloadImg = () => {
+      let aEl = document.createElement('a')
+      aEl.download = 'xx'
+      aEl.href = canvas.toDataURL()
+      document.body.appendChild(aEl)
+      aEl.click()
+      document.body.removeChild(aEl)
+    }
+
     return {
-      changeImgUrl
+      changeImgUrl,
+      downloadImg
     }
   },
   components: {
