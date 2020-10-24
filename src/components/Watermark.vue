@@ -15,13 +15,13 @@ export default {
     let waterColor = ref('#999')
     let waterFontSize = ref('12')
     let clearance = ref('100')
+    let canvas, ctx, img, ox, oy
 
     const addWatermark = () => {
-      const canvas = document.getElementById('canvas')
-      let ctx = canvas.getContext('2d')
-      let img = document.createElement('img')
-      let ox, oy
-      img.onload = render()
+      canvas = document.getElementById('canvas')
+      ctx = canvas.getContext('2d')
+      img = document.createElement('img')
+      img.onload = render
       img.src = imgUrl.value
     }
 

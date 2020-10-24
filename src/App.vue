@@ -1,14 +1,14 @@
 <template>
-  <WaterMark />
+  <Watermark />
 </template>
 
 <script>
-import WaterMark from './components/WaterMark.vue'
+import Watermark from './components/Watermark.vue'
 
 export default {
   name: 'App',
   components: {
-    WaterMark
+    Watermark
   }
 }
 </script>
